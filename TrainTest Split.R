@@ -1,0 +1,10 @@
+rm(list=ls())
+data<-read.csv("F:/Thesis/DataMing+MachieLeaning/CAD/CAD Dataset_After_One_hot_encode_Organized_Normalized.csv")
+
+library(caTools)
+set.seed(123)
+split=sample.split(data$Cath,SplitRatio = 0.70)
+training=subset(data,split==TRUE)
+testing=subset(data,split==FALSE)
+write.csv(training,"F:/Thesis/DataMing+MachieLeaning/CAD/CAD Dataset Train70p.csv")
+write.csv(testing,"F:/Thesis/DataMing+MachieLeaning/CAD/CAD Dataset Test30p.csv")
